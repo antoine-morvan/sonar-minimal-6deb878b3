@@ -1,0 +1,13 @@
+node_modules/
+testcomp/
+coverage/
+.nyc_output/
+.git/
+lib/
+.nvs/
+.env
+target/
+*.log
+*.orig
+*.sparql
+xunit.xml

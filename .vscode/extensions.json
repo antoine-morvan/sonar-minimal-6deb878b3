@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "christian-kohler.path-intellisense",
+    "eamodio.gitlens",
+    "ryu1kn.partial-diff",
+    "stkb.rewrap",
+    "aaron-bond.better-comments",
+    "jbockle.jbockle-format-files",
+    "ryanluker.vscode-coverage-gutters",
+    "octref.vetur",
+    "hollowtree.vue-snippets",
+    "firsttris.vscode-jest-runner"
+  ]
+}

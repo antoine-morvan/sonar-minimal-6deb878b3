@@ -1,0 +1,102 @@
+{
+  "name": "myapp",
+  "version": "0.0.1",
+  "description": "My Demo App",
+  "author": "antoine.morvan.pro@gmail.com",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0 <15.0.0",
+    "npm": ">=6.0.0 <7.0.0"
+  },
+  "scripts": {
+    "COMMENT0.1": "########################",
+    "COMMENT0.2": "##        MISC        ##",
+    "COMMENT0.3": "########################",
+    "eslint": "eslint -c .eslintrc --ext '.ts' 'src/'",
+    "clean": "rimraf ./target/",
+    "doc": "typedoc --out target/docs src/",
+    "COMMENT1.1": "########################",
+    "COMMENT1.2": "##   BACKEND CONFIG   ##",
+    "COMMENT1.3": "########################",
+    "build": "tsc --sourceMap false --outDir ./target/package/ --declaration",
+    "COMMENT5.1": "########################",
+    "COMMENT5.2": "##      TESTING      ##",
+    "COMMENT5.3": "########################",
+    "jest:clear": "jest --clearCache",
+    "test": "npm run jest:clear && jest",
+    "COMMENT3.1": "########################",
+    "COMMENT3.2": "##     ALL IN ONE     ##",
+    "COMMENT3.3": "########################",
+    "all": "npm run eslint && npm run build && npm test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@jest/globals": "^26.6.2",
+    "@types/jest": "^26.0.0",
+    "@types/node": "^14.14.31",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "eslint": "latest",
+    "eslint-plugin-import": "latest",
+    "eslint-plugin-jest": "latest",
+    "eslint-plugin-node": "latest",
+    "eslint-plugin-prettier": "latest",
+    "eslint-plugin-promise": "latest",
+    "jest": "^26.5.1",
+    "jest-sonar-reporter": "^2.0.0",
+    "license-checker": "latest",
+    "npm": "latest",
+    "publish-release": "latest",
+    "simple-git": "latest",
+    "source-map-support": "^0.5.16",
+    "ts-jest": "^26.5.1",
+    "ts-loader": "^8.0.14",
+    "ts-node": "latest",
+    "tsconfig-paths": "^3.9.0",
+    "typedoc": "^0.20.23",
+    "typescript": "^4.1.0",
+    "web-streams-polyfill": "^2.0.6",
+    "webpack": "^4.0.0",
+    "webpack-cli": "^4.0.0",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "jestSonar": {
+    "reportPath": "target/",
+    "reportFile": "test-report.xml",
+    "indent": 2
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testMatch": [
+      "<rootDir>/(test/**/*.(spec|test).(ts|tsx|js))"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "reporters": [
+      "default"
+    ],
+    "testResultsProcessor": "jest-sonar-reporter",
+    "moduleNameMapper": {
+      "@myapp/(.*)": "<rootDir>/src/$1",
+      "@myapptest/(.*)": "<rootDir>/test/$1"
+    },
+    "snapshotSerializers": [],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "html"
+    ],
+    "coverageDirectory": "target/coverage",
+    "collectCoverageFrom": [
+      "**/*.{ts,js}",
+      "!**/node_modules/**",
+      "!**/target/**"
+    ]
+  }
+}

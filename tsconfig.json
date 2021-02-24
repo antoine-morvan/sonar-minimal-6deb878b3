@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@myapp/*": ["src/*"],
+      "@myapptest/*": ["test/*"]
+    },
+    "allowJs": false,
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "preserveConstEnums": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es6",
+    "lib": ["es6", "dom", "scripthost", "es2015.collection", "es2015.promise", "es2019"],
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "sourceMap": true,
+    "module": "commonjs"
+  },
+  "include": ["src/**/*", "test/**/*"],
+  "exclude": ["node_modules/"]
+}

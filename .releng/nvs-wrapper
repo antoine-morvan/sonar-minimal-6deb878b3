@@ -1,0 +1,24 @@
+#!/bin/bash
+
+DIR=$(cd $(dirname $0) && pwd)
+VERSION_FILE=${DIR}/versions.csv
+
+[ ! -f ${VERSION_FILE} ] && echo "Error: cold not locate version file '${VERSION_FILE}'" && exit 1
+
+# given by the Jenkinsfile
+NVS_FODLER=${DIR}/.nvs/
+NVS_VERSION=$(cat ${VERSION_FILE} | grep 'NVS' | cut -d',' -f2)
+NODE_VERSION=$(cat ${VERSION_FILE} | grep 'NODE' | cut -d',' -f2)
+
+# test if nvs is present
+command -v nvs > /dev/null
+# if not, init env
+if [ $? != 0 ]; then
+    [ ! -d "${NVS_FODLER}" ] && \
+        git clone --branch v$NVS_VERSION --depth 1 https://github.com/jasongin/nvs "${NVS_FODLER}"
+    . "${NVS_FODLER}"/nvs.sh ""
+fi
+
+NODE_VERSION_AVAILABLE=$(nvs ls ${NODE_VERSION} | grep 'node/12.11.1' | wc -l)
+[ ${NODE_VERSION_AVAILABLE} == 0 ] && nvs add ${NODE_VERSION}
+nvs exec ${NODE_VERSION} ${@:1}

@@ -1,0 +1,33 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "javascript.preferences.quoteStyle": "double",
+  "typescript.format.semicolons": "insert",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "editor.codeActionsOnSaveTimeout": 5000,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "rewrap.wrappingColumn": 120,
+  "prettier.disableLanguages": ["html"],
+  "prettier.endOfLine": "lf",
+  "prettier.printWidth": 120,
+  "prettier.semi": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.trailingComma": "none",
+  "prettier.quoteProps": "consistent",
+  "prettier.proseWrap": "always",
+  "eslint.format.enable": false,
+  "eslint.alwaysShowStatus": true,
+  "coverage-gutters.showLineCoverage": true,
+  "coverage-gutters.showRulerCoverage": true,
+  "sonarlint.disableTelemetry": true,
+  "terminal.integrated.scrollback": 100000,
+  "eslint.validate": ["vue"]
+}
