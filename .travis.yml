@@ -1,0 +1,13 @@
+addons:
+  sonarcloud:
+    organization: "antoine-morvan"
+    token:
+      secure: "HeTFo0S+ASsIPA4UMgFq6ElA8ENari6MKwZCgWVT8FKctk670KEMi9claYnJl8s06QtdounQn8qDHls3MJ2IInaGV2lnE29gklKef0o69WnQGfurbNfPOuHmSlhvTZHbQaGfjWFVG/Rp5UkgyRlRZH626l0KZ8Wi9U/bX+RAV2snwwprmwencAGhtXS2daEXXhhTIYJLLGtxW32oYox0nOILkk9Jh8DEcjnLFy25IXt7hA+IPf484+J74e9hPsuDt5HMkYc44KLKX5O1XJwhqoS11xzX56c436iTnzWMVwHAbnGuq/Vl4KOwO3tauRrRSp5GGBcktdx+KvTk9GEJjF5mv7S3vm61Ejvf+FWq3CP7gH9XeO9fOzEo8cwkPRmSCaTLhmRKEeFq++TFwOR5iFWFmoQNt712rfOgdFB0GPqRLwTp8i/3AGpYCRrEdDIdpkNZd4YyX4ITjp2QyzuQwct+XrTwJQ21CoZMaAqcTwsH3Zh2ChH3QTi7Gj4aFGPrtfhEQEtGovHxmTrGvK4bUkQHFUj+IlfAbIbOu1OKlnh5lz0w6PzT9tBmAFLxzjgz+Umq1SqXFbBBe20pxXqzl7pfz/lMtnHAe9AdrdQBZmqipFrnsAI2JYPLfL69yOQOic3cw7t+6jQq9p0nu+R+WejK3jqLQdqTNZPdvPCj81I="
+node_js:
+  - 14.15.5
+language: node_js
+install:
+  - npm install
+script:
+  - npm run all
+  - sonar-scanner
